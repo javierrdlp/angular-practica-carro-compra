@@ -3,19 +3,29 @@
     <thead>
         <tr>
             <th>Producto</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Total</th>
+            <th class="text-center">Cantidad</th>
+            <th class="text-center">Precio</th>            
+            <th class="text-center">Total</th>
+            <th class="text-center">Eliminar</th>
         </tr>
     </thead>
     <tbody>
         @for (item of items; track $index){
             <tr>
-                <td>{{item.product.name}}</td>
-                <td>{{item.product.price}}</td>
-                <td>{{item.quantity}}</td>
-                <td>{{item.product.price * item.quantity}}</td>
+                <td>{{item.product.name}}</td>                
+                <td class="text-center">{{item.quantity}}</td>
+                <td class="text-center">{{item.product.price}}</td>
+                <td class="text-center">{{item.product.price * item.quantity}}</td>
+                <td class="text-center"><button class="btn btn-danger btn-sm" (click)="onDeleteCart(item.product.id)">X</button></td>
             </tr>
         }
     </tbody>
+    <tfoot class="">
+        <tr>
+            <td colspan="4" class="text-end fw-bold">Total </td>
+            <td colspan="1" class="text-end fw-bold">{{total}}</td>
+        </tr>
+       
+    </tfoot>
 </table>
+
