@@ -10,7 +10,7 @@ import { CartItem } from '../../models/cartItem';
 export class ModalCartComponent {
 
   @Input() items: CartItem[] = [];
-  @Input() total: number= 0;
+  // @Input() total: number= 0;
 
   @Output() closeCartEventEmitter = new EventEmitter();
   @Output() idProductEventEmitter = new EventEmitter();

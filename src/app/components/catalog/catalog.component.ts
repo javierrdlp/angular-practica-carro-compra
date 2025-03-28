@@ -15,6 +15,6 @@ export class CatalogComponent {
   @Output() productEventEmitter: EventEmitter<Product> = new EventEmitter();
 
   onAddCart(product: Product){
-    this.productEventEmitter.emit(product);
+    this.productEventEmitter.emit(product);    
   }
 }
