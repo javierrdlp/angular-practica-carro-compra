@@ -1,14 +1,14 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product';
 import { CatalogComponent } from './catalog/catalog.component';
-import { CartComponent } from './cart/cart.component';
 import { CartItem } from '../models/cartItem';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ModalCartComponent } from './modal-cart/modal-cart.component';
 
 @Component({
   selector: 'cart-app',
-  imports: [CatalogComponent, CartComponent, NavbarComponent],
+  imports: [CatalogComponent, NavbarComponent, ModalCartComponent],
   templateUrl: './cart-app.component.html'
 })
 export class CartAppComponent implements OnInit {
@@ -65,7 +65,7 @@ export class CartAppComponent implements OnInit {
     sessionStorage.setItem('cart', JSON.stringify(this.items));
   }
 
-  openCart(): void{
+  openCloseCart(): void{
     this.showCart = !this.showCart;
   }
 }
